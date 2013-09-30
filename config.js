@@ -46,7 +46,17 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://hazy.pw',
-        mail: {},
+        mail: {
+            transport: 'SMTP',
+            host: 'smtp.mailgun.org',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@hazy.mailgun.org',
+                    pass: '0l4i0hgi7d-5'
+                }
+            }
+        },
         database: {
             client: 'sqlite3',
             connection: {
